@@ -2,6 +2,9 @@ import 'package:carrosweb/constants.dart';
 import 'package:carrosweb/web/header.dart';
 import 'package:carrosweb/web/menu.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'app_model.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -57,8 +60,11 @@ class _HomeState extends State<Home> {
   }
 
   _right() {
+    AppModel app = Provider.of<AppModel>(context);
+
     return Container(
       width: showMenu ? size.width - menuWidth : size.width,
+      child: app.page,
     );
   }
 }

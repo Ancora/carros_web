@@ -1,5 +1,7 @@
+import 'package:carrosweb/app_model.dart';
 import 'package:carrosweb/home.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,17 +10,24 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: _theme(),
-      home: Home(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => AppModel(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: _theme(),
+        home: Home(),
+      ),
     );
   }
 
   _theme() {
     return ThemeData(
       primarySwatch: Colors.blue,
-      //visualDensity: VisualDensity.adaptivePlatformDensity,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
       scaffoldBackgroundColor: Colors.white,
       splashColor: Colors.blue,
       hoverColor: Colors.blue[100],
