@@ -8,31 +8,54 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Size get size => MediaQuery.of(context).size;
-  bool get showDrawer => size.width <= 760;
+  bool get showMenu => size.width < 500;
+  // bool get showDrawer => size.width <= 760;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Miniatura de Carros ${size.width} / ${size.height}'),
-        automaticallyImplyLeading: showDrawer,
+      body: Column(
+        children: <Widget>[
+          _header(),
+          _body(),
+        ],
       ),
-      body: _body(),
-      drawer: Drawer(
-        child: _menu(),
+    );
+  }
+
+  _header() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      width: size.width,
+      height: headerHeight,
+      color: Colors.blueGrey,
+      child: Row(
+        children: <Widget>[
+          Text(
+            'Miniatura de Carros ${size.width} / ${size.height}',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
+          ),
+        ],
       ),
     );
   }
 
   _body() {
-    return showDrawer
-        ? _right()
-        : Row(
-            children: <Widget>[
-              _menu(),
-              _right(),
-            ],
-          );
+    return Container(
+      width: size.width,
+      height: size.height - headerHeight,
+      child: showMenu
+          ? Row(
+              children: <Widget>[
+                _menu(),
+                _right(),
+              ],
+            )
+          : _right(),
+    );
   }
 
   _menu() {
@@ -60,7 +83,7 @@ class _HomeState extends State<Home> {
 
   _right() {
     return Container(
-      width: showDrawer ? size.width : size.width - menuWidth,
+      width: showMenu ? size.width - menuWidth : size.width,
       color: Colors.black45,
     );
   }
