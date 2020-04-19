@@ -1,10 +1,8 @@
 import 'package:carrosweb/constants.dart';
+import 'package:carrosweb/web/body.dart';
 import 'package:carrosweb/web/header.dart';
 import 'package:carrosweb/web/menu.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import 'app_model.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -32,7 +30,7 @@ class _HomeState extends State<Home> {
         padding: const EdgeInsets.all(16),
         width: size.width,
         height: headerHeight,
-        color: Color.fromRGBO(26, 35, 126, 0.5),
+        color: Color.fromRGBO(26, 35, 126, 0.7),
         child: Header());
   }
 
@@ -55,16 +53,14 @@ class _HomeState extends State<Home> {
     return Container(
       width: menuWidth,
       child: Menu(),
-      color: Color.fromRGBO(26, 35, 126, 0.5),
+      color: Color.fromRGBO(26, 35, 126, 0.7),
     );
   }
 
   _right() {
-    AppModel app = Provider.of<AppModel>(context);
-
     return Container(
       width: showMenu ? size.width - menuWidth : size.width,
-      child: app.page,
+      child: Body(),
     );
   }
 }
