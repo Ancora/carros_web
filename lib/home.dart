@@ -1,4 +1,6 @@
 import 'package:carrosweb/constants.dart';
+import 'package:carrosweb/web/header.dart';
+import 'package:carrosweb/web/menu.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -29,17 +31,7 @@ class _HomeState extends State<Home> {
       width: size.width,
       height: headerHeight,
       color: Colors.blueGrey,
-      child: Row(
-        children: <Widget>[
-          Text(
-            'Miniatura de Carros ${size.width} / ${size.height}',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-            ),
-          ),
-        ],
-      ),
+      child: Header()
     );
   }
 
@@ -62,22 +54,7 @@ class _HomeState extends State<Home> {
     return Container(
       width: menuWidth,
       color: Colors.blue[100],
-      child: ListView(
-        children: [
-          ListTile(
-            leading: Icon(Icons.star),
-            title: Text('Item 1'),
-          ),
-          ListTile(
-            leading: Icon(Icons.star_border),
-            title: Text('Item 2'),
-          ),
-          ListTile(
-            leading: Icon(Icons.star_half),
-            title: Text('Item 3'),
-          ),
-        ],
-      ),
+      child: Menu(),
     );
   }
 
