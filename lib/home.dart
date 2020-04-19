@@ -21,13 +21,17 @@ class _HomeState extends State<Home> {
   _body() {
     return Row(
       children: <Widget>[
-        Container(
-          width: 853,
-          color: Colors.blue[100],
+        Expanded(
+          flex: 2,
+          child: Container(
+            color: Colors.blue[100],
+          ),
         ),
-        Container(
-          width: 863,
-          color: Colors.black45,
+        Expanded(
+          flex: 8,
+          child: Container(
+            color: Colors.black45,
+          ),
         ),
       ],
     );
