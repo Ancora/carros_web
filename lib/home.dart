@@ -8,12 +8,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Miniatura de Carros'),
       ),
       body: Center(
-        child: Text('Hello!!!'),
+        child: Text('Hello ${size.width} / ${size.height}!!!'),
       ),
     );
   }
