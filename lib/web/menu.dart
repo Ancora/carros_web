@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Menu extends StatefulWidget {
   @override
@@ -10,19 +11,23 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        ListTile(
-          leading: Icon(Icons.star),
-          title: Text('Item 1'),
-        ),
-        ListTile(
-          leading: Icon(Icons.star_border),
-          title: Text('Item 2'),
-        ),
-        ListTile(
-          leading: Icon(Icons.star_half),
-          title: Text('Item 3'),
-        ),
+        _itemMenu('Home', FontAwesomeIcons.home),
+        _itemMenu('Carros', FontAwesomeIcons.car),
+        _itemMenu('Usuários', FontAwesomeIcons.userAlt),
       ],
+    );
+  }
+
+  _itemMenu(String title, IconData icon) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () {},
+        child: ListTile(
+          leading: Icon(icon),
+          title: Text(title),
+        ),
+      ),
     );
   }
 }

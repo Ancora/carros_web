@@ -11,7 +11,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   Size get size => MediaQuery.of(context).size;
   bool get showMenu => size.width > 500;
-  // bool get showDrawer => size.width <= 760;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class _HomeState extends State<Home> {
         padding: const EdgeInsets.all(16),
         width: size.width,
         height: headerHeight,
-        color: Colors.blueGrey,
+        color: Color.fromRGBO(26, 35, 126, 0.5),
         child: Header());
   }
 
@@ -52,15 +51,14 @@ class _HomeState extends State<Home> {
   _menu() {
     return Container(
       width: menuWidth,
-      color: Colors.blue[100],
       child: Menu(),
+      color: Color.fromRGBO(26, 35, 126, 0.5),
     );
   }
 
   _right() {
     return Container(
       width: showMenu ? size.width - menuWidth : size.width,
-      color: Colors.black45,
     );
   }
 }
