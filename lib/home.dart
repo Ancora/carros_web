@@ -1,3 +1,4 @@
+import 'package:carrosweb/constants.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -7,12 +8,14 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Size get size => MediaQuery.of(context).size;
+  bool get showDrawer => size.width <= 760;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Miniatura de Carros ${size.width} / ${size.height}'),
+        automaticallyImplyLeading: showDrawer,
       ),
       body: _body(),
       drawer: Drawer(
@@ -22,17 +25,19 @@ class _HomeState extends State<Home> {
   }
 
   _body() {
-    return Row(
-      children: <Widget>[
-        _menu(),
-        _right(),
-      ],
-    );
+    return showDrawer
+        ? _right()
+        : Row(
+            children: <Widget>[
+              _menu(),
+              _right(),
+            ],
+          );
   }
 
   _menu() {
     return Container(
-      width: 230,
+      width: menuWidth,
       color: Colors.blue[100],
       child: ListView(
         children: [
@@ -55,7 +60,7 @@ class _HomeState extends State<Home> {
 
   _right() {
     return Container(
-      width: size.width - 230,
+      width: showDrawer ? size.width : size.width - menuWidth,
       color: Colors.black45,
     );
   }
