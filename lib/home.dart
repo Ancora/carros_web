@@ -19,19 +19,17 @@ class _HomeState extends State<Home> {
   }
 
   _body() {
+    Size size = MediaQuery.of(context).size;
+
     return Row(
       children: <Widget>[
-        Expanded(
-          flex: 2,
-          child: Container(
-            color: Colors.blue[100],
-          ),
+        Container(
+          width: 230,
+          color: Colors.blue[100],
         ),
-        Expanded(
-          flex: 8,
-          child: Container(
-            color: Colors.black45,
-          ),
+        Container(
+          width: size.width - 230,
+          color: Colors.black45,
         ),
       ],
     );
