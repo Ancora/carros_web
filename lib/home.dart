@@ -12,11 +12,24 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Miniatura de Carros'),
+        title: Text('Miniatura de Carros ${size.width} / ${size.height}'),
       ),
-      body: Center(
-        child: Text('Hello ${size.width} / ${size.height}!!!'),
-      ),
+      body: _body(),
+    );
+  }
+
+  _body() {
+    return Row(
+      children: <Widget>[
+        Container(
+          width: 853,
+          color: Colors.blue[100],
+        ),
+        Container(
+          width: 863,
+          color: Colors.black45,
+        ),
+      ],
     );
   }
 }
