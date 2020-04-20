@@ -1,11 +1,11 @@
-import 'package:carrosweb/pages/home_page.dart';
+import 'package:carrosweb/pages/carros_page.dart';
 import 'package:flutter/material.dart';
 
 class AppModel extends ChangeNotifier {
   Widget page;
 
   AppModel() {
-    page = HomePage();
+    page = CarrosPage();
   }
 
   setPage(Widget page) {

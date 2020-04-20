@@ -45,6 +45,7 @@ class _MenuState extends State<Menu> {
             style: TextStyle(
               fontWeight: b ? FontWeight.bold : FontWeight.normal,
               fontSize: b ? 20 : 18,
+              color: b ? Colors.blue : Colors.black,
             ),
           ),
         ),

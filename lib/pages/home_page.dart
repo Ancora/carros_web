@@ -16,46 +16,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   _body() {
-    return GridView.builder(
-      itemCount: 100,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 20,
-        crossAxisSpacing: 20,
-        childAspectRatio: 1.5,
-      ),
-      itemBuilder: (context, index) {
-        return LayoutBuilder(
-          builder: (context, constraints) {
-            double fontSize = size(
-              constraints.maxWidth * 0.1,
-              min: 10,
-              max: Theme.of(context).textTheme.bodyText1.fontSize,
-            );
-
-            return Card(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxWidth: 250,
-                    ),
-                    child: Image.network(
-                      'http://www.livroandroid.com.br/livro/carros/esportivos/Renault_Megane_Trophy.png',
-                    ),
-                  ),
-                  Text(
-                    '$fontSize - Renault Megane RS Trophy',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: fontSize),
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      },
-    );
+    return DebugWidgetSize();
   }
 }
