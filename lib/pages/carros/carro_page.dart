@@ -1,15 +1,22 @@
+import 'package:carrosweb/app_model.dart';
 import 'package:carrosweb/pages/carros/carro.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class CarroPage extends StatelessWidget {
+class CarroPage extends StatefulWidget {
   final Carro car;
   CarroPage(this.car);
 
   @override
+  _CarroPageState createState() => _CarroPageState();
+}
+
+class _CarroPageState extends State<CarroPage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(car.nome),
+        title: Text(widget.car.nome),
         centerTitle: true,
       ),
       body: _body(),
@@ -22,21 +29,30 @@ class CarroPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.network(
-            car.urlFoto ??
+            widget.car.urlFoto ??
                 'https://cdn.pixabay.com/photo/2013/04/01/11/00/no-driving-98886_960_720.png',
           ),
           Text(
-            car.nome ?? '',
+            widget.car.nome ?? '',
             overflow: TextOverflow.ellipsis,
             //style: TextStyle(fontSize: fontSize),
           ),
           Text(
-            car.tipo ?? '',
+            widget.car.tipo ?? '',
             overflow: TextOverflow.ellipsis,
             //style: TextStyle(fontSize: fontSize),
+          ),
+          RaisedButton(
+            child: Text('Voltar'),
+            onPressed: _onClickVoltar,
           ),
         ],
       ),
     );
+  }
+
+  void _onClickVoltar() {
+    AppModel app = Provider.of<AppModel>(context, listen: false);
+    app.pop();
   }
 }

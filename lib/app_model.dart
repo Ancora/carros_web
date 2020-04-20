@@ -12,4 +12,9 @@ class AppModel extends ChangeNotifier {
     this.pages.add(page);
     notifyListeners();
   }
+
+  void pop() {
+    this.pages.removeLast();
+    notifyListeners();
+  }
 }
