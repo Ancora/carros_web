@@ -1,19 +1,24 @@
-import 'package:carrosweb/pages/carros/carros_page.dart';
+import 'package:carrosweb/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AppModel extends ChangeNotifier {
   List<Widget> pages = [];
+  Widget defaultPage = HomePage();
 
   AppModel() {
-    pages.add(CarrosPage());
+    pages.add(defaultPage);
   }
 
   push(Widget page, {bool replace = false}) {
     if (replace) {
       this.pages.clear();
+      pages.add(defaultPage);
     }
 
-    this.pages.add(page);
+    if (page.runtimeType.toString() != defaultPage.runtimeType.toString()) {
+      this.pages.add(page);
+    }
+
     notifyListeners();
   }
 
