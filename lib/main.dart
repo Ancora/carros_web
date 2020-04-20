@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       hoverColor: Colors.blue[100],
       textTheme: TextTheme(
         bodyText1: TextStyle(
-          fontSize: 20,
+          fontSize: 22,
         ),
       ),
     );
