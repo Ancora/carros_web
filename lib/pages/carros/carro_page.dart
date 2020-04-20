@@ -14,13 +14,7 @@ class CarroPage extends StatefulWidget {
 class _CarroPageState extends State<CarroPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.car.nome),
-        centerTitle: true,
-      ),
-      body: _body(),
-    );
+    return _body();
   }
 
   _body() {
