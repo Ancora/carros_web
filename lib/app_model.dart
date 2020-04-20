@@ -2,14 +2,14 @@ import 'package:carrosweb/pages/carros/carros_page.dart';
 import 'package:flutter/material.dart';
 
 class AppModel extends ChangeNotifier {
-  Widget page;
+  List<Widget> pages = [];
 
   AppModel() {
-    page = CarrosPage();
+    pages.add(CarrosPage());
   }
 
-  setPage(Widget page) {
-    this.page = page;
+  push(Widget page) {
+    this.pages.add(page);
     notifyListeners();
   }
 }
