@@ -60,13 +60,14 @@ class _HomeState extends State<Home> {
 
   _right() {
     return Container(
+      padding: EdgeInsets.all(8),
       width: showMenu ? size.width - menuWidth : size.width,
       child: Column(
         children: <Widget>[
           Container(
             width: size.width,
-            height: 56,
-            color: Colors.blue[200],
+            height: 48,
+            color: Color.fromRGBO(26, 35, 126, 0.7),
             child: BreadCrumb(),
           ),
           Expanded(

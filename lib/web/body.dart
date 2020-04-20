@@ -6,7 +6,8 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppModel app = Provider.of<AppModel>(context);
+    PageInfo info = app.pages.last;
 
-    return app.pages.last;
+    return info.page;
   }
 }

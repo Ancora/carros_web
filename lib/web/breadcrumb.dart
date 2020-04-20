@@ -12,6 +12,9 @@ class _BreadCrumbState extends State<BreadCrumb> {
   Widget build(BuildContext context) {
     AppModel app = Provider.of<AppModel>(context);
 
-    return Text('${app.pages.toString()}');
+    return Text(
+      '${app.pages.toString()}',
+      style: TextStyle(color: Colors.white),
+    );
   }
 }

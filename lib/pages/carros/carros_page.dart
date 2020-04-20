@@ -83,6 +83,6 @@ class _CarrosPageState extends State<CarrosPage> {
   _onClickCarro(Carro car) {
     //push(context, CarroPage(car));
     AppModel app = Provider.of<AppModel>(context, listen: false);
-    app.push(CarroPage(car));
+    app.push(PageInfo(car.nome, CarroPage(car)));
   }
 }
