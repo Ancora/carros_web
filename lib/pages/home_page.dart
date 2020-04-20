@@ -37,8 +37,13 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    'http://www.livroandroid.com.br/livro/carros/esportivos/Renault_Megane_Trophy.png',
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: 250,
+                    ),
+                    child: Image.network(
+                      'http://www.livroandroid.com.br/livro/carros/esportivos/Renault_Megane_Trophy.png',
+                    ),
                   ),
                   Text(
                     '$fontSize - Renault Megane RS Trophy',
