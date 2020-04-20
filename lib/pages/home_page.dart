@@ -13,9 +13,18 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _body() {
+  /* _body() {
     return Center(
       child: Text('Home Page'),
     );
+  } */
+
+  _body() {
+    return LayoutBuilder(builder: (context, constraints) {
+      return Center(
+        child: Text(
+            'Home Page - ${constraints.maxWidth} / ${constraints.maxHeight}'),
+      );
+    });
   }
 }
