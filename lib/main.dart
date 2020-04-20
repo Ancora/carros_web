@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return ThemeData(
       primarySwatch: Colors.blue,
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: Colors.blue[100],
       splashColor: Colors.blue,
       hoverColor: Colors.blue[100],
       textTheme: TextTheme(
