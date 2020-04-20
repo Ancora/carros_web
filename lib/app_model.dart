@@ -8,7 +8,11 @@ class AppModel extends ChangeNotifier {
     pages.add(CarrosPage());
   }
 
-  push(Widget page) {
+  push(Widget page, {bool replace = false}) {
+    if (replace) {
+      this.pages.clear();
+    }
+
     this.pages.add(page);
     notifyListeners();
   }
