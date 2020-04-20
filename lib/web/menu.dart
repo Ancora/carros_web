@@ -1,5 +1,5 @@
 import 'package:carrosweb/app_model.dart';
-import 'package:carrosweb/pages/carros_page.dart';
+import 'package:carrosweb/pages/carros/carros_page.dart';
 import 'package:carrosweb/pages/home_page.dart';
 import 'package:carrosweb/pages/usuarios_page.dart';
 import 'package:flutter/material.dart';
