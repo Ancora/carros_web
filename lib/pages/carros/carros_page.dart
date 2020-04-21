@@ -44,8 +44,8 @@ class _CarrosPageState extends State<CarrosPage> {
         return LayoutBuilder(
           builder: (context, constraints) {
             double fontSize = size(
-              constraints.maxWidth * 0.1,
-              min: 10,
+              constraints.maxWidth * 0.05,
+              min: 5,
               max: Theme.of(context).textTheme.bodyText1.fontSize,
             );
 
