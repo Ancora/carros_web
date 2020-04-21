@@ -18,27 +18,39 @@ class _BreadCrumbState extends State<BreadCrumb> {
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
         PageInfo info = app.pages[index];
-        return Row(
-          children: [
-            ConstrainedBox(
-              constraints: BoxConstraints.expand(width: 32),
-              child: Icon(
-                index == 0
-                    ? FontAwesomeIcons.home
-                    : FontAwesomeIcons.chevronRight,
-                color: Theme.of(context).primaryColor,
+        return InkWell(
+          onTap: () => _onClickPage(index),
+          child: Row(
+            children: [
+              ConstrainedBox(
+                constraints: BoxConstraints.expand(width: 32),
+                child: Icon(
+                  index == 0
+                      ? FontAwesomeIcons.home
+                      : FontAwesomeIcons.angleRight,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
-            ),
-            Text(
-              info.title,
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontSize: 18,
+              Text(
+                info.title,
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 18,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );
+  }
+
+  _onClickPage(int index) {
+    AppModel app = Provider.of<AppModel>(context);
+    if (index == 0) {
+      app.popAll();
+    } else {
+      app.popTo(index);
+    }
   }
 }
