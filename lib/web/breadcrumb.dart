@@ -19,7 +19,10 @@ class _BreadCrumbState extends State<BreadCrumb> {
       itemBuilder: (context, index) {
         PageInfo info = app.pages[index];
         return InkWell(
-          onTap: () => _onClickPage(index),
+          onTap: () {
+            print('Index no onTap: $index');
+            _onClickPage(index);
+          },
           child: Row(
             children: [
               ConstrainedBox(
@@ -47,6 +50,7 @@ class _BreadCrumbState extends State<BreadCrumb> {
 
   _onClickPage(int index) {
     AppModel app = Provider.of<AppModel>(context);
+    print('Index no _onClickPage: $index');
     if (index == 0) {
       app.popAll();
     } else {

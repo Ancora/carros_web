@@ -72,6 +72,10 @@ flutter:
     - family: ComicNeue
       fonts:
         - asset: assets/fonts/ComicNeue-Regular.ttf
+
+    - family: IndieFlower
+      fonts:
+        - asset: assets/fonts/IndieFlower-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

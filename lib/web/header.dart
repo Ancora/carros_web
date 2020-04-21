@@ -21,7 +21,7 @@ class _HeaderState extends State<Header> {
       title: Text(
         'Miniatura de Carros',
         style: TextStyle(
-          fontSize: 20,
+          fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
           color: Theme.of(context).primaryColor,
         ),
       ),
@@ -37,7 +37,7 @@ class _HeaderState extends State<Header> {
           user.nome,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
-            fontSize: 18,
+            fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
           ),
         ),
         SizedBox(width: 20),

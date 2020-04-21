@@ -29,12 +29,16 @@ class _CarroPageState extends State<CarroPage> {
           Text(
             widget.car.nome ?? '',
             overflow: TextOverflow.ellipsis,
-            //style: TextStyle(fontSize: fontSize),
+            style: TextStyle(
+              fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
+            ),
           ),
           Text(
             widget.car.tipo ?? '',
             overflow: TextOverflow.ellipsis,
-            //style: TextStyle(fontSize: fontSize),
+            style: TextStyle(
+              fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
+            ),
           ),
           RaisedButton(
             child: Text('Voltar'),

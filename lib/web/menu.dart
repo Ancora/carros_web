@@ -67,6 +67,7 @@ class _MenuState extends State<Menu> {
             item.title,
             style: TextStyle(
               fontWeight: item.selected ? FontWeight.bold : FontWeight.normal,
+              fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
               color:
                   item.selected ? AppColors.bg : Theme.of(context).primaryColor,
             ),
