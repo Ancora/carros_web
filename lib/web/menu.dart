@@ -1,4 +1,5 @@
 import 'package:carrosweb/app_model.dart';
+import 'package:carrosweb/colors.dart';
 import 'package:carrosweb/pages/carros/carros_page.dart';
 import 'package:carrosweb/pages/home_page.dart';
 import 'package:carrosweb/pages/usuarios_page.dart';
@@ -57,13 +58,17 @@ class _MenuState extends State<Menu> {
           });
         },
         child: ListTile(
-          leading: Icon(item.icon),
+          leading: Icon(
+            item.icon,
+            color:
+                item.selected ? AppColors.bg : Theme.of(context).primaryColor,
+          ),
           title: Text(
             item.title,
             style: TextStyle(
               fontWeight: item.selected ? FontWeight.bold : FontWeight.normal,
-              fontSize: item.selected ? 20 : 18,
-              color: item.selected ? Colors.blue : Colors.black,
+              color:
+                  item.selected ? AppColors.bg : Theme.of(context).primaryColor,
             ),
           ),
         ),

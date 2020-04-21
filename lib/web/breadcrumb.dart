@@ -26,13 +26,13 @@ class _BreadCrumbState extends State<BreadCrumb> {
                 index == 0
                     ? FontAwesomeIcons.home
                     : FontAwesomeIcons.chevronRight,
-                color: Colors.white,
+                color: Theme.of(context).primaryColor,
               ),
             ),
             Text(
               info.title,
               style: TextStyle(
-                color: Colors.white,
+                color: Theme.of(context).primaryColor,
                 fontSize: 18,
               ),
             ),

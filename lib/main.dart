@@ -1,4 +1,5 @@
 import 'package:carrosweb/app_model.dart';
+import 'package:carrosweb/colors.dart';
 import 'package:carrosweb/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,10 +28,12 @@ class MyApp extends StatelessWidget {
   _theme() {
     return ThemeData(
       primarySwatch: Colors.blue,
+      primaryColor: AppColors.texto,
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      scaffoldBackgroundColor: Colors.blue[100],
+      scaffoldBackgroundColor:
+          Colors.lightBlueAccent[100], // cor padrão de fundo
       splashColor: Colors.blue,
-      hoverColor: Colors.blue[100],
+      hoverColor: Colors.lightBlueAccent[100],
       textTheme: TextTheme(
         bodyText1: TextStyle(
           fontSize: 22,

@@ -1,4 +1,5 @@
 import 'package:carrosweb/app_model.dart';
+import 'package:carrosweb/colors.dart';
 import 'package:carrosweb/pages/carros/carro.dart';
 import 'package:carrosweb/pages/carros/carro_page.dart';
 import 'package:carrosweb/pages/carros/carros_api.dart';
@@ -53,6 +54,7 @@ class _CarrosPageState extends State<CarrosPage> {
             return InkWell(
               onTap: () => _onClickCarro(car),
               child: Card(
+                color: AppColors.bg,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -63,12 +65,15 @@ class _CarrosPageState extends State<CarrosPage> {
                     Text(
                       car.nome ?? '',
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: fontSize),
+                      style: TextStyle(
+                        fontSize: fontSize,
+                        color: AppColors.texto,
+                      ),
                     ),
                     Text(
                       car.tipo ?? '',
                       overflow: TextOverflow.ellipsis,
-                      //style: TextStyle(fontSize: fontSize),
+                      style: TextStyle(color: AppColors.texto),
                     ),
                   ],
                 ),

@@ -1,15 +1,30 @@
+import 'package:carrosweb/colors.dart';
 import 'package:flutter/material.dart';
 
 alert(BuildContext context, String msg, {Function callback}) {
   showDialog(
+    barrierColor: Color.fromRGBO(0, 0, 0, 0.5),
     context: context,
     barrierDismissible: false,
     builder: (context) {
       return WillPopScope(
         onWillPop: () async => false,
         child: AlertDialog(
-          title: Text("Miniatura de Carros"),
-          content: Text(msg),
+          backgroundColor: AppColors.bg,
+          title: Text(
+            "Miniatura de Carros",
+            style: TextStyle(
+              color: AppColors.texto,
+            ),
+          ),
+          content: Container(
+            child: Text(
+              msg,
+              style: TextStyle(
+                color: AppColors.texto,
+              ),
+            ),
+          ),
           actions: <Widget>[
             FlatButton(
               child: Text("OK"),

@@ -1,3 +1,4 @@
+import 'package:carrosweb/colors.dart';
 import 'package:carrosweb/domain/user.dart';
 import 'package:carrosweb/utils/alert.dart';
 import 'package:flutter/material.dart';
@@ -18,10 +19,10 @@ class _HeaderState extends State<Header> {
         size: 50,
       ),
       title: Text(
-        'Miniatura de Carros - ${size.width} / ${size.height}',
+        'Miniatura de Carros',
         style: TextStyle(
           fontSize: 20,
-          color: Colors.white,
+          color: Theme.of(context).primaryColor,
         ),
       ),
       trailing: _right(),
@@ -35,7 +36,7 @@ class _HeaderState extends State<Header> {
         Text(
           user.nome,
           style: TextStyle(
-            color: Colors.white,
+            color: Theme.of(context).primaryColor,
             fontSize: 18,
           ),
         ),
@@ -51,7 +52,7 @@ class _HeaderState extends State<Header> {
           },
         ),
         PopupMenuButton<String>(
-          color: Color.fromRGBO(26, 35, 126, 0.5),
+          color: AppColors.bg,
           key: _menuState,
           padding: EdgeInsets.zero,
           onSelected: (value) {
@@ -60,7 +61,7 @@ class _HeaderState extends State<Header> {
           child: Icon(
             Icons.keyboard_arrow_down,
             size: 28,
-            color: Colors.white,
+            color: Theme.of(context).primaryColor,
           ),
           itemBuilder: (context) => _getActions(),
         ),
@@ -72,15 +73,30 @@ class _HeaderState extends State<Header> {
     return <PopupMenuItem<String>>[
       PopupMenuItem<String>(
         value: 'meus_dados',
-        child: Text('Meus dados'),
+        child: Text(
+          'Meus dados',
+          style: TextStyle(
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
       ),
       PopupMenuItem<String>(
         value: 'alterar_senha',
-        child: Text('Alterar senha'),
+        child: Text(
+          'Alterar senha',
+          style: TextStyle(
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
       ),
       PopupMenuItem<String>(
         value: 'logout',
-        child: Text('Logout'),
+        child: Text(
+          'Logout',
+          style: TextStyle(
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
       ),
     ];
   }

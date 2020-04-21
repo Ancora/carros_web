@@ -1,3 +1,4 @@
+import 'package:carrosweb/colors.dart';
 import 'package:carrosweb/constants.dart';
 import 'package:carrosweb/web/body.dart';
 import 'package:carrosweb/web/breadcrumb.dart';
@@ -31,7 +32,7 @@ class _HomeState extends State<Home> {
         padding: const EdgeInsets.all(16),
         width: size.width,
         height: headerHeight,
-        color: Color.fromRGBO(26, 35, 126, 0.7),
+        color: AppColors.bg,
         child: Header());
   }
 
@@ -54,7 +55,7 @@ class _HomeState extends State<Home> {
     return Container(
       width: menuWidth,
       child: Menu(),
-      color: Color.fromRGBO(26, 35, 126, 0.7),
+      color: AppColors.bg,
     );
   }
 
@@ -67,7 +68,7 @@ class _HomeState extends State<Home> {
           Container(
             width: size.width,
             height: 48,
-            color: Color.fromRGBO(26, 35, 126, 0.7),
+            color: AppColors.bg,
             child: BreadCrumb(),
           ),
           Expanded(
