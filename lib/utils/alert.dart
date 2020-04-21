@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 alert(BuildContext context, String msg, {Function callback}) {
   showDialog(
-    barrierColor: Color.fromRGBO(0, 0, 0, 0.5),
     context: context,
     barrierDismissible: false,
     builder: (context) {
