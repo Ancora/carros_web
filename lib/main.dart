@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
 
   _theme() {
     return ThemeData(
+      fontFamily: 'ComicNeue',
       primarySwatch: Colors.blue,
       primaryColor: AppColors.texto,
       visualDensity: VisualDensity.adaptivePlatformDensity,
