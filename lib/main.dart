@@ -40,6 +40,9 @@ class MyApp extends StatelessWidget {
         bodyText1: TextStyle(
           fontSize: 22,
         ),
+        bodyText2: TextStyle(
+          fontSize: 28,
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:carrosweb/app_model.dart';
 import 'package:carrosweb/colors.dart';
 import 'package:carrosweb/pages/carros/carros_page.dart';
+import 'package:carrosweb/pages/count_page.dart';
 import 'package:carrosweb/pages/home_page.dart';
 import 'package:carrosweb/pages/upload/upload_page.dart';
 import 'package:carrosweb/pages/usuarios_page.dart';
@@ -34,7 +35,7 @@ class _MenuState extends State<Menu> {
     menus.add(ItemMenu("Carros", FontAwesomeIcons.car, CarrosPage()));
     menus.add(ItemMenu("Usuários", FontAwesomeIcons.userAlt, UsuariosPage()));
     menus.add(ItemMenu("Upload", FontAwesomeIcons.upload, UploadPage()));
-    //menus.add(ItemMenu("Storage", FontAwesomeIcons.database, CountPage()));
+    menus.add(ItemMenu("Storage", FontAwesomeIcons.database, CountPage()));
     //menus.add(ItemMenu("Info", FontAwesomeIcons.info, InfoPage()));
   }
 
