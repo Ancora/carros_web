@@ -1,15 +1,16 @@
 import 'package:carrosweb/app_model.dart';
 import 'package:carrosweb/colors.dart';
 import 'package:carrosweb/pages/carros/carros_page.dart';
-import 'package:carrosweb/pages/charts/charts_page.dart';
+import 'package:carrosweb/pages/chart/charts_page.dart';
 import 'package:carrosweb/pages/count_page.dart';
-import 'package:carrosweb/pages/home_page.dart';
+import 'package:carrosweb/pages/default_page.dart';
+import 'package:carrosweb/pages/favoritos/usuarios_favoritos_page.dart';
 import 'package:carrosweb/pages/info_page.dart';
+import 'package:carrosweb/pages/push/push_page.dart';
 import 'package:carrosweb/pages/upload/upload_page.dart';
-import 'package:carrosweb/pages/usuarios_page.dart';
+import 'package:carrosweb/pages/usuarios/usuarios_datatable_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 
 class ItemMenu {
   String title;
@@ -35,10 +36,13 @@ class _MenuState extends State<Menu> {
 
     menus.add(ItemMenu("Home", FontAwesomeIcons.home, HomePage()));
     menus.add(ItemMenu("Carros", FontAwesomeIcons.car, CarrosPage()));
+    menus.add(
+        ItemMenu("Favoritos", FontAwesomeIcons.heart, UsuariosFavoritosPage()));
     menus.add(ItemMenu("Usuários", FontAwesomeIcons.userAlt, UsuariosPage()));
     menus.add(ItemMenu("Upload", FontAwesomeIcons.upload, UploadPage()));
     menus.add(ItemMenu("Storage", FontAwesomeIcons.database, CountPage()));
     menus.add(ItemMenu("Charts", FontAwesomeIcons.chartArea, ChartsPage()));
+    menus.add(ItemMenu("Push", FontAwesomeIcons.bell, PushPage()));
     menus.add(ItemMenu("Info", FontAwesomeIcons.info, InfoPage()));
   }
 
@@ -58,7 +62,7 @@ class _MenuState extends State<Menu> {
       color: item.selected ? Theme.of(context).hoverColor : Colors.transparent,
       child: InkWell(
         onTap: () {
-          AppModel app = Provider.of<AppModel>(context, listen: false);
+          PagesModel app = PagesModel.get(context);
           app.push(PageInfo(item.title, item.page), replace: true);
           setState(() {
             menus.forEach((item) => item.selected = false);

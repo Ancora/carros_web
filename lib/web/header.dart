@@ -1,7 +1,8 @@
-import 'package:carrosweb/colors.dart';
-import 'package:carrosweb/domain/user.dart';
-import 'package:carrosweb/utils/alert.dart';
-import 'package:flutter/material.dart';
+import 'package:carrosweb/app_model.dart';
+import 'package:carrosweb/imports.dart';
+import 'package:carrosweb/pages/login/usuario.dart';
+import 'package:carrosweb/pages/senha/alterar_senha_page.dart';
+import 'package:carrosweb/pages/usuarios/meus_dados_page.dart';
 
 class Header extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class _HeaderState extends State<Header> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          user.nome,
+          '${user?.nome}',
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
@@ -43,7 +44,7 @@ class _HeaderState extends State<Header> {
         SizedBox(width: 20),
         InkWell(
           child: CircleAvatar(
-            backgroundImage: NetworkImage(user.urlFoto),
+            backgroundImage: NetworkImage('${user?.urlFoto}'),
           ),
           onTap: () {
             // abre o popup menu
@@ -102,11 +103,14 @@ class _HeaderState extends State<Header> {
   }
 
   void _onClickOptionMenu(context, String value) {
-    print('_onClickOptionMenu $value');
     if ('logout' == value) {
+      logout(context);
     } else if ('meus_dados' == value) {
+      Usuario user = AppModel.get(context).user;
+      PagesModel.get(context).push(PageInfo("Meus Dados", MeusDadosPage(user)));
     } else if ('alterar_senha' == value) {
+      PagesModel.get(context)
+          .push(PageInfo("Alterar Senha", AlterarSenhaPage()));
     } else {}
-    alert(context, value);
   }
 }

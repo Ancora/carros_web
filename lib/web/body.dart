@@ -5,9 +5,8 @@ import 'package:provider/provider.dart';
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    AppModel app = Provider.of<AppModel>(context);
+    PagesModel app = Provider.of<PagesModel>(context);
     PageInfo info = app.pages.last;
-
     return info.page;
   }
 }
