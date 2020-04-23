@@ -1,6 +1,4 @@
-import 'package:carrosweb/web/debug_widget_size.dart';
-//import 'package:carrosweb/web/web_utils.dart';
-import 'package:flutter/material.dart';
+import 'package:carrosweb/imports.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,7 +13,30 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _body() {
+  /* _body() {
     return DebugWidgetSize();
+  } */
+  _body() {
+    return Center(
+      child: Container(
+        width: 600,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              "Carros",
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Image.asset(
+              "assets/imgs/background.jpg",
+              fit: BoxFit.fill,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

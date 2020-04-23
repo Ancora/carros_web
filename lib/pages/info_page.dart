@@ -1,5 +1,4 @@
-import 'package:carrosweb/utils/web/web.dart';
-import 'package:flutter/material.dart';
+import 'package:carrosweb/imports.dart';
 
 class InfoPage extends StatefulWidget {
   @override
