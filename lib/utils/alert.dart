@@ -1,5 +1,4 @@
-import 'package:carrosweb/colors.dart';
-import 'package:flutter/material.dart';
+import 'package:carrosweb/imports.dart';
 
 alert(BuildContext context, String msg, {Function callback}) {
   showDialog(
