@@ -1,12 +1,5 @@
-import 'package:carrosweb/app_model.dart';
-import 'package:carrosweb/colors.dart';
-import 'package:carrosweb/pages/carros/carro.dart';
-import 'package:carrosweb/pages/carros/carro_page.dart';
-import 'package:carrosweb/pages/carros/carros_api.dart';
-//import 'package:carrosweb/utils/nav.dart';
-import 'package:carrosweb/web/web_utils.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:carrosweb/imports.dart';
+import 'package:carrosweb/pages/carros/carros_list.dart';
 
 class CarrosPage extends StatefulWidget {
   @override
@@ -14,20 +7,62 @@ class CarrosPage extends StatefulWidget {
 }
 
 class _CarrosPageState extends State<CarrosPage> {
+  Usuario get user => AppModel.get(context).user; // lib\pages\login\usuario.dart
+
+  @override
+  Widget build(BuildContext context) {
+    return user.isAdmin() ? _admin() : _user();
+  }
+
+  _user() {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Carros"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () => logout(context),
+          )
+        ],
+      ),
+      body: CarrosListView(),
+    );
+  }
+
+  _admin() {
+    return Scaffold(
+      body: BreadCrumb(
+        child: CarrosListView(),
+        actions: [
+          AddButton(
+            onPressed: _onClickAdd,
+          )
+        ],
+      ),
+    );
+  }
+
+  // Adicionar novo carro
+  _onClickAdd() {
+    PagesModel.get(context).push(PageInfo("Carros", CarroFormPage()));
+  }
+
+/* class _CarrosPageState extends State<CarrosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder<List<Carro>>(
-          future: CarrosApi.getCarros(context),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            List<Carro> carros = snapshot.data;
-            return _listView(carros);
-          }),
+        future: CarrosApi.getCarros(context),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          List<Carro> carros = snapshot.data;
+          return _listView(carros);
+        },
+      ),
     );
   }
 
@@ -89,5 +124,5 @@ class _CarrosPageState extends State<CarrosPage> {
     //push(context, CarroPage(car));
     AppModel app = Provider.of<AppModel>(context, listen: false);
     app.push(PageInfo(car.nome, CarroPage(car)));
-  }
+  } */
 }
