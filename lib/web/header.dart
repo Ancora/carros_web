@@ -12,6 +12,7 @@ class Header extends StatefulWidget {
 class _HeaderState extends State<Header> {
   GlobalKey _menuState = GlobalKey();
   Size get size => MediaQuery.of(context).size;
+  Usuario get user => AppModel.get(context).user;
 
   @override
   Widget build(BuildContext context) {

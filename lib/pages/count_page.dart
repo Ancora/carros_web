@@ -1,6 +1,6 @@
 import 'package:carrosweb/imports.dart';
 
-//int _counter = 0;
+int _counter = 0;
 
 class CountPage extends StatefulWidget {
   @override
@@ -8,21 +8,21 @@ class CountPage extends StatefulWidget {
 }
 
 class _CountPageState extends State<CountPage> {
-  int _counter = 0;
+  //int _counter = 0;
 
   @override
   void initState() {
     super.initState();
-    _counter = Prefs.getInt('count');
-    //_initCounter();
+    //_counter = Prefs.getInt('count');
+    _initCounter();
   }
 
-  /* _initCounter() async {
+  _initCounter() async {
     Future<int> future = Prefs.getInt('count');
     future.then((int count) {
       _counter = count;
     });
-  } */
+  }
 
   void _incrementCounter() {
     setState(() {
