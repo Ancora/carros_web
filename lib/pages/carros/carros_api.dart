@@ -16,7 +16,7 @@ class CarrosApi {
       url += '/tipo/$tipo';
     }
 
-    final response = await http.get(url); // utils/http_helper.dart
+    final response = await http.get(context, url); // utils/http_helper.dart
     String json = response.body;
 
     List list = convert.json.decode(json);
