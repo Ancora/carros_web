@@ -1,0 +1,28 @@
+import 'package:carrosweb/colors.dart';
+import 'package:flutter/material.dart';
+
+class AppText extends StatelessWidget {
+  final String text;
+  final double fontSize;
+  final Color color;
+  final bool bold;
+
+  AppText(
+    this.text, {
+    this.fontSize = 16,
+    this.color = AppColors.texto, // anterior: Colors.black
+    this.bold = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text ?? "",
+      style: TextStyle(
+        fontSize: fontSize,
+        color: color,
+        fontWeight: bold ? FontWeight.bold : FontWeight.normal,
+      ),
+    );
+  }
+}
