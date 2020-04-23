@@ -1,11 +1,4 @@
-import 'dart:async';
-import 'dart:html';
-
-import 'package:carrosweb/pages/upload/upload_api.dart';
-import 'package:carrosweb/pages/upload/upload_helper.dart';
-import 'package:carrosweb/utils/api_response.dart';
-import 'package:carrosweb/utils/web/launch.dart';
-import 'package:flutter/material.dart';
+import 'package:carrosweb/imports.dart';
 
 class UploadPage extends StatefulWidget {
   @override
@@ -53,7 +46,7 @@ class _UploadPageState extends State<UploadPage> {
         ),
         Center(
           child: Container(
-            color: Colors.grey[100],
+            color: AppColors.bg,
             child: ConstrainedBox(
               constraints: BoxConstraints.tightFor(height: 250),
               child: Center(
