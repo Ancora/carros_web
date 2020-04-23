@@ -1,9 +1,9 @@
 import 'package:carrosweb/app_model.dart';
 import 'package:carrosweb/colors.dart';
 import 'package:carrosweb/pages/carros/carros_page.dart';
-import 'package:carrosweb/pages/chart/charts_page.dart';
+import 'package:carrosweb/pages/charts/charts_page.dart';
 import 'package:carrosweb/pages/count_page.dart';
-import 'package:carrosweb/pages/default_page.dart';
+import 'package:carrosweb/pages/home_page.dart';
 import 'package:carrosweb/pages/favoritos/usuarios_favoritos_page.dart';
 import 'package:carrosweb/pages/info_page.dart';
 import 'package:carrosweb/pages/push/push_page.dart';
