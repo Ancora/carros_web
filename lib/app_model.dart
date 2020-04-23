@@ -1,5 +1,16 @@
-import 'package:carrosweb/pages/home_page.dart';
-import 'package:flutter/material.dart';
+import 'package:carrosweb/imports.dart';
+
+class AppModel extends ChangeNotifier {
+  static AppModel get(context, {bool listen = false}) =>
+      Provider.of<AppModel>(context, listen: listen);
+
+  Usuario _user; // pages/login/usuario.dart
+  Usuario get user => _user;
+  void setUser(Usuario u) {
+    this._user = u;
+    notifyListeners();
+  }
+}
 
 class PageInfo {
   String title;
@@ -13,11 +24,14 @@ class PageInfo {
   }
 }
 
-class AppModel extends ChangeNotifier {
+class PagesModel extends ChangeNotifier {
+  static PagesModel get(context, {bool listen = false}) =>
+      Provider.of<PagesModel>(context, listen: listen);
+
   List<PageInfo> pages = [];
   PageInfo defaultPage = PageInfo('Home', HomePage());
 
-  AppModel() {
+  PagesModel() {
     pages.add(defaultPage);
   }
 

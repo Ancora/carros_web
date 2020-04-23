@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:carrosweb/imports.dart';
 
 class AppColors {
   static const texto = Colors.lightBlueAccent; // lightBlueAccent
